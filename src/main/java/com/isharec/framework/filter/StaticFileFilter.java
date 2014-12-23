@@ -77,6 +77,7 @@ public class StaticFileFilter implements Filter {
 
 	private boolean isExcluded(File file) {
 		String path = file.getPath();
+		// WEB-INF下的文件不允许
 		if (path.indexOf("/WEB-INF/") != -1) {
 			return true;
 		}
