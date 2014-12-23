@@ -20,6 +20,8 @@
 	<properties>
 		<spring.version>3.2.5.RELEASE</spring.version>
 		<hibernate.version>4.2.0.Final</hibernate.version>
+		<druid.version>1.0.1</druid.version>
+		<mysql.driver.version>5.1.13</mysql.driver.version>
 		<hibernate-search.version>4.2.0.Final</hibernate-search.version>
 		<hibernate-validator.version>5.0.1.Final</hibernate-validator.version>
 		<ehcache.version>2.6.6</ehcache.version>
@@ -137,7 +139,14 @@
 			<artifactId>spring-oxm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		
+		<!-- spring 测试 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 		<!-- AOP begin -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -209,6 +218,19 @@
 		<!-- http://blog.csdn.net/zhengwei223/article/details/11952763 -->
 		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-search</artifactId> 
 			<version>${hibernate-search.version}</version> </dependency> -->
+
+		<!-- 数据库连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.driver.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
