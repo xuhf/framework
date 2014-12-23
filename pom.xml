@@ -1,0 +1,291 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.isharec</groupId>
+	<artifactId>framework</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>framework</name>
+	<url>http://www.isharec.com</url>
+
+	<developers>
+		<developer>
+			<name>isharec</name>
+			<email>xuhf_1988@163.com</email>
+			<url>http://www.isharec.com</url>
+		</developer>
+	</developers>
+
+	<properties>
+		<spring.version>3.2.5.RELEASE</spring.version>
+		<hibernate.version>4.2.0.Final</hibernate.version>
+		<hibernate-search.version>4.2.0.Final</hibernate-search.version>
+		<hibernate-validator.version>5.0.1.Final</hibernate-validator.version>
+		<ehcache.version>2.6.6</ehcache.version>
+		<jackson-version>1.9.12</jackson-version>
+		<xstream.version>1.4.3</xstream.version>
+		<commons-fileupload.version>1.3</commons-fileupload.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<com.google.guava-version>14.0</com.google.guava-version>
+	</properties>
+
+	<dependencies>
+		<!-- 测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- siteMesh -->
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- jsp页面上的标签相关 -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- SPRING begin -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring orm -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring mvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- AOP begin -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.7.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- AOP end -->
+
+		<!-- jackson json 可以处理json数据并且spring-mvc需要 -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-lgpl</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream.version}</version>
+		</dependency>
+
+		<!-- apache common 组件 -->
+		<!-- 文件上传 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<!-- -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- http://blog.csdn.net/hnzhangshilong/article/details/6689675 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+		<!-- 全文检索 -->
+		<!-- http://blog.csdn.net/zhengwei223/article/details/11952763 -->
+		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-search</artifactId> 
+			<version>${hibernate-search.version}</version> </dependency> -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- common-logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- java.util.logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<!-- log4jdbc -->
+		<dependency>
+			<groupId>org.lazyluke</groupId>
+			<artifactId>log4jdbc-remix</artifactId>
+			<version>0.2.7</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- EHCACHE begin -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>${ehcache.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-web</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<!-- EHCACHE end -->
+
+		<!-- 一些小工具集 -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${com.google.guava-version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>framework</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>9999</port>
+					<path>/framework</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>framework</finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
