@@ -12,7 +12,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import com.isharec.framework.base.persistence.BaseEntity;
 
 @Entity
-@Table(name = "dict")
+@Table(name = "f_dict")
 @DynamicInsert
 @DynamicUpdate
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)

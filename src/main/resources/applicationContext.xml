@@ -10,4 +10,5 @@
 	<context:annotation-config />
 	<import resource="spring-mvc.xml" />
 	<import resource="spring-hibernate.xml" />
+	<import resource="spring-shiro.xml" />
 </beans> 

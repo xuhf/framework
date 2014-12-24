@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
+import com.google.common.collect.Lists;
 import com.isharec.framework.base.config.Global;
 import com.isharec.framework.utils.CookieUtils;
 
@@ -30,7 +31,7 @@ public class Page<T> {
 	private int length = 8;// 显示页面长度
 	private int slider = 1;// 前后显示页面长度
 
-	private List<T> list = new ArrayList<T>();
+	private List<T> list = Lists.newArrayList();
 
 	private String orderBy = ""; // 标准查询有效， 实例： updatedate desc, name asc
 

@@ -73,6 +73,20 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<!-- shiro 安全管理框架 -->
+	<filter>
+		<filter-name>shiroFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!-- Spring 配置 -->
 	<!-- 编码过滤 -->
 	<filter>
@@ -91,6 +105,11 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+	<!-- 未来要使用 防止XSS攻击 -->
+	<!-- <filter> <filter-name>XssFilter</filter-name> <filter-class>com.eversec.phishing.common.filter.XssFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>XssFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> -->
 
 	<!-- Spring的ContextLoaderListener -->
 	<listener>

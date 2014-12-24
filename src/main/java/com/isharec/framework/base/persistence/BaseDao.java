@@ -463,6 +463,7 @@ public class BaseDao<T> {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public <E> List<E> findBySql(String sqlString, Parameter parameter,
 			int startNum, int limit) {
 
