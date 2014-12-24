@@ -57,7 +57,7 @@ label.error {
 											<i class="icon-coffee green"></i> 请输入您的用户名/密码
 										</h4>
 										<div class="space-6"></div>
-										<form action="${ctx }/login" method="post" id="loginForm">
+										<form action="${ctx }/login" method="post">
 											<fieldset>
 												<label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
@@ -94,8 +94,7 @@ label.error {
 	</div>
 	<script type="text/javascript">
 		$(function() {
-			$("#loginForm").validate({
-				debug : true,
+			$("form").validate({
 				rules : {
 					username : "required",
 					password : {
