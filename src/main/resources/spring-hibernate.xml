@@ -17,8 +17,23 @@
 	<!-- 加载配置文件 -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
 
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
+
+	<!-- 配置 JSR303 Bean Validator 定义 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+	<!-- 缓存配置 -->
+	<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:${ehcache.configFile}" />
+	</bean>
 
 	<!-- SessionFactory -->
 	<bean id="sessionFactory"
@@ -46,11 +61,6 @@
 		<property name="namingStrategy">
 			<bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
 		</property>
-	</bean>
-
-	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<!-- 使用数据库连接池 -->

@@ -1,4 +1,4 @@
-package com.isharec.framework.base;
+package com.isharec.framework.base.persistence;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @MappedSuperclass
-public abstract class BaseEntity implements Serializable {
+public abstract class BaseEntity<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
