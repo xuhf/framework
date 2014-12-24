@@ -8,6 +8,7 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 
 public class FrameworkFormAuthenticationFilter extends FormAuthenticationFilter {
+
 	public static final String DEFAULT_CAPTCHA_PARAM = "validateCode";
 
 	private String captchaParam = DEFAULT_CAPTCHA_PARAM;

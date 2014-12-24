@@ -42,7 +42,7 @@ public class User extends BaseEntity<User> {
 	private String loginName;// 登录名
 
 	@JsonIgnore
-	@Length(min = 6, max = 20)
+	@Length(min = 6, max = 100)
 	private String password;// 密码
 
 	private String name; // 姓名
@@ -55,7 +55,7 @@ public class User extends BaseEntity<User> {
 
 	@Length(min = 0, max = 200)
 	private String mobile; // 手机
-	private Integer userType;// 用户类型
+	
 	private String loginIp; // 最后登陆IP
 
 	private Date loginDate; // 最后登陆日期
@@ -156,14 +156,6 @@ public class User extends BaseEntity<User> {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
-	}
-
-	public Integer getUserType() {
-		return userType;
-	}
-
-	public void setUserType(Integer userType) {
-		this.userType = userType;
 	}
 
 	public String getLoginIp() {

@@ -20,21 +20,20 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.util.ByteSource;
-import org.springframework.context.annotation.DependsOn;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.isharec.framework.entity.Menu;
 import com.isharec.framework.entity.User;
-import com.isharec.framework.service.SystemService;
+import com.isharec.framework.service.UserService;
 import com.isharec.framework.utils.Encodes;
-import com.isharec.framework.utils.SpringContextHolder;
 import com.isharec.framework.utils.UserUtils;
 
 @Service
-@DependsOn({ "userDao", "roleDao", "menuDao" })
 public class SystemAuthorizingRealm extends AuthorizingRealm {
 
-	private SystemService systemService;
+	@Autowired
+	private UserService userService;
 
 	/**
 	 * 认证回调函数, 登录时调用
@@ -54,7 +53,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		 * CaptchaException("验证码错误."); } }
 		 */
 
-		User user = getSystemService().getUserByLoginName(token.getUsername());
+		User user = userService.getUserByLoginName(token.getUsername());
 		if (user != null) {
 			byte[] salt = Encodes
 					.decodeHex(user.getPassword().substring(0, 16));
@@ -73,8 +72,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	protected AuthorizationInfo doGetAuthorizationInfo(
 			PrincipalCollection principals) {
 		Principal principal = (Principal) getAvailablePrincipal(principals);
-		User user = getSystemService().getUserByLoginName(
-				principal.getLoginName());
+		User user = userService.getUserByLoginName(principal.getLoginName());
 		if (user != null) {
 			UserUtils.putCache("user", user);
 			SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -89,7 +87,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 				}
 			}
 			// 更新登录IP和时间
-			getSystemService().updateUserLoginInfo(user.getId());
+			userService.updateUserLoginInfo(user.getId());
 			return info;
 		} else {
 			return null;
@@ -102,8 +100,8 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	@PostConstruct
 	public void initCredentialsMatcher() {
 		HashedCredentialsMatcher matcher = new HashedCredentialsMatcher(
-				SystemService.HASH_ALGORITHM);
-		matcher.setHashIterations(SystemService.HASH_INTERATIONS);
+				UserService.HASH_ALGORITHM);
+		matcher.setHashIterations(UserService.HASH_INTERATIONS);
 		setCredentialsMatcher(matcher);
 	}
 
@@ -126,16 +124,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 				cache.remove(key);
 			}
 		}
-	}
-
-	/**
-	 * 获取系统业务对象
-	 */
-	public SystemService getSystemService() {
-		if (systemService == null) {
-			systemService = SpringContextHolder.getBean(SystemService.class);
-		}
-		return systemService;
 	}
 
 	/**

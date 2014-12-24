@@ -21,7 +21,7 @@ label.error {
 }
 </style>
 <meta charset="utf-8">
-<title>BaseFramework后台管理系统登录</title>
+<title>BaseFramework后台管理系统|登录</title>
 </head>
 <body class="login-layout">
 	<div class="main-container">
@@ -62,12 +62,12 @@ label.error {
 												<label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
 														type="text" class="form-control" name="username"
-														placeholder="用户名" /> <i class="icon-user"></i>
+														placeholder="请输入用户名" /> <i class="icon-user"></i>
 												</span>
 												</label> <label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
 														type="password" name="password" class="form-control"
-														placeholder="密码" /> <i class="icon-lock"></i>
+														placeholder="请输入密码" /> <i class="icon-lock"></i>
 												</span>
 												</label>
 												<div class="space"></div>
@@ -76,9 +76,7 @@ label.error {
 														class="ace" name="rememberMe" /> <span class="lbl">
 															记住我</span>
 													</label>
-
-													<button type="button"
-														class="width-35 pull-right btn btn-sm btn-primary -submit">
+													<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
 														<i class="icon-key"></i> 登录
 													</button>
 												</div>
@@ -102,7 +100,7 @@ label.error {
 					username : "required",
 					password : {
 						required : true,
-						minlength : 5
+						minlength : 6
 					}
 				},
 				messages : {
@@ -112,9 +110,6 @@ label.error {
 						minlength : jQuery.format("密码不能小于{0}个字 符")
 					}
 				}
-			});
-			$(".-submit").on("click", function() {
-				$("#loginForm").submit();
 			});
 		});
 	</script>

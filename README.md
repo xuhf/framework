@@ -14,3 +14,6 @@
 
 ### 感谢
 在项目的开发过程中，参考了jeecg，jeesite等项目，在此表示感谢。
+
+### 不足
+- 必须使用tomcat7 或者 查看此文章 [http://hibernate.org/validator/faq/](http://hibernate.org/validator/faq/)
