@@ -11,7 +11,7 @@
 						class="icon-double-angle-right"></i> 用户管理
 				</a></li>
 
-				<li><a href="buttons.html"> <i
+				<li><a href="${ctx}/role"> <i
 						class="icon-double-angle-right"></i> 角色管理
 				</a></li>
 
@@ -22,7 +22,8 @@
 				<li><a href="jquery-ui.html"> <i
 						class="icon-double-angle-right"></i> 字典管理
 				</a></li>
-			</ul></li>
+			</ul>
+		</li>
 	</ul>
 	<div class="sidebar-collapse" id="sidebar-collapse">
 		<i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
@@ -33,5 +34,23 @@
 			ace.settings.check('sidebar', 'collapsed')
 		} catch (e) {
 		}
+
+		$(function() {
+			// 减少全局变量
+			(function() {
+				var $href = window.location.href;
+				console.log($href);
+				$('#sidebar .nav-list li').removeClass('active').removeClass(
+						'open');
+				$('#sidebar .nav-list li').each(function() {
+					var $this = $(this);
+					var $a = $this.find('a');
+					if ($href.indexOf($a.attr("href")) >= 0) {
+						$this.addClass('active');
+						$this.closest('ul').closest('li').addClass('active open');
+					}
+				});
+			}());
+		});
 	</script>
 </div>

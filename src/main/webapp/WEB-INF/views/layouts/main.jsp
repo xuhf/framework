@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html style="overflow-x: hidden; overflow-y: auto;">
 <head>
-<title><sitemesh:write property='title' /></title>
+<title>
+<%-- <sitemesh:write property='title'/>  --%>
+BaseFramework|http://www.isharec.com
+</title>
 <%@include file="/WEB-INF/views/include/header.jsp"%>
 <sitemesh:write property='head' />
 </head>

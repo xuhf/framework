@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page
+	import="org.apache.shiro.web.filter.authc.FormAuthenticationFilter"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en" style="overflow: hidden;">
@@ -23,6 +25,10 @@ label.error {
 <meta charset="utf-8">
 <title>BaseFramework后台管理系统|登录</title>
 </head>
+<%
+	String error = (String) request
+			.getAttribute(FormAuthenticationFilter.DEFAULT_ERROR_KEY_ATTRIBUTE_NAME);
+%>
 <body class="login-layout">
 	<div class="main-container">
 		<div class="main-content">
@@ -39,13 +45,13 @@ label.error {
 						</div>
 						<div class="space-6"></div>
 						<div class="position-relative">
-							<div class="row">
+							<div class="row <%=error == null ? "hide" : ""%>">
 								<div class="col-xs-12">
 									<div class="alert alert-block alert-danger">
 										<button type="button" class="close" data-dismiss="alert">
 											<i class="icon-remove"></i>
 										</button>
-										用户名或密码错误
+										用户或密码错误，请重试。
 									</div>
 								</div>
 							</div>
@@ -62,7 +68,7 @@ label.error {
 												<label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
 														type="text" class="form-control" name="username"
-														placeholder="请输入用户名" /> <i class="icon-user"></i>
+														placeholder="请输入用户名" value="${username}"/> <i class="icon-user"></i>
 												</span>
 												</label> <label class="block clearfix"> <span
 													class="block input-icon input-icon-right"> <input
@@ -76,7 +82,8 @@ label.error {
 														class="ace" name="rememberMe" /> <span class="lbl">
 															记住我</span>
 													</label>
-													<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+													<button type="submit"
+														class="width-35 pull-right btn btn-sm btn-primary">
 														<i class="icon-key"></i> 登录
 													</button>
 												</div>
