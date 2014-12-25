@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en" style="overflow: hidden;">
 <head>
@@ -7,21 +8,14 @@
 </head>
 <body>
 	<div class="breadcrumbs" id="breadcrumbs">
-		<script type="text/javascript">
-			try {
-				ace.settings.check('breadcrumbs', 'fixed')
-			} catch (e) {
-			}
-		</script>
 		<ul class="breadcrumb">
 			<li><i class="icon-home home-icon"></i> <a href="#">首页</a></li>
-			<li class="active">控制台</li>
 		</ul>
 	</div>
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				控制台 <small> <i class="icon-double-angle-right"></i> 查看
+				首页<small> <i class="icon-double-angle-right"></i> 
 				</small>
 			</h1>
 		</div>

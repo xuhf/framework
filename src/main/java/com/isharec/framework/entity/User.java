@@ -3,6 +3,7 @@ package com.isharec.framework.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -39,6 +40,7 @@ public class User extends BaseEntity<User> {
 	private static final long serialVersionUID = -5683328027762464663L;
 
 	@Length(min = 6, max = 100)
+	@Column(unique = true)
 	private String loginName;// 登录名
 
 	@JsonIgnore
@@ -55,7 +57,7 @@ public class User extends BaseEntity<User> {
 
 	@Length(min = 0, max = 200)
 	private String mobile; // 手机
-	
+
 	private String loginIp; // 最后登陆IP
 
 	private Date loginDate; // 最后登陆日期

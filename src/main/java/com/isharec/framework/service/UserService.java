@@ -100,4 +100,9 @@ public class UserService extends BaseService {
 		return password.equals(Encodes.encodeHex(salt)
 				+ Encodes.encodeHex(hashPassword));
 	}
+
+	public Page<User> page(Page<User> page) {
+		Page<User> users = userDao.find(page);
+		return users;
+	}
 }

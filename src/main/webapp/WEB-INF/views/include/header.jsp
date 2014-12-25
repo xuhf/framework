@@ -1,9 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<meta name="author" content="" />
+ -->
+ <meta http-equiv="Expires" content="0" />
+<meta name="author" content="isharec.com" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -14,6 +16,7 @@
 <link rel="stylesheet" href="${ctx }/assets/css/ace.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-skins.min.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/application.css"/>
 
 <!-- ACE框架自带 -->
 <script src="${ctx }/assets/js/jquery-2.1.1.js"></script>
