@@ -25,43 +25,26 @@
 				<div class="hr hr32 hr-dotted"></div>
 				<div class="row">
 					<div class="col-xs-12">
-						<form class="form-horizontal" role="form">
+						<form data-role="validate" class="form-horizontal" role="form">
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
 									for="form-field-1"> 用户名 </label>
-
 								<div class="col-sm-9">
-									<input type="text" placeholder="Username" class="input-xlarge" />
+									<input type="text" name="username" placeholder="Username"
+										class="input-xlarge required" minlength="6" maxlength="20" />
 								</div>
 							</div>
-							<div class="space-4"></div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
 									for="form-field-2"> 密码 </label>
 								<div class="col-sm-9">
-									<input type="password" placeholder="Password"
-										class="input-xlarge" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label no-padding-right"
-									for="form-field-2"> 重复密码 </label>
-								<div class="col-sm-9">
-									<input type="password" placeholder="Password"
-										class="input-xlarge" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-3 control-label no-padding-right"
-									for="form-field-2"> 邮箱 </label>
-								<div class="col-sm-9">
-									<input type="password" placeholder="Password"
-										class="input-xlarge" />
+									<input type="password" name="password" placeholder="Password"
+										class="input-xlarge required" />
 								</div>
 							</div>
 							<div class="clearfix form-actions">
 								<div class="col-md-offset-3 col-md-9">
-									<button class="btn btn-info" type="button">
+									<button class="btn btn-info" type="submit">
 										<i class="icon-ok bigger-110"></i> 提交
 									</button>
 									&nbsp;&nbsp;&nbsp;&nbsp;

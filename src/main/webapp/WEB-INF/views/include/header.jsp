@@ -4,7 +4,7 @@
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="Pragma" content="no-cache" />
  -->
- <meta http-equiv="Expires" content="0" />
+<meta http-equiv="Expires" content="0" />
 <meta name="author" content="http://www.isharec.com" />
 <meta name="description" content="BaseFramework">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="${ctx }/assets/css/ace.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-skins.min.css" />
-<link rel="stylesheet" href="${ctx }/assets/css/application.css"/>
+<link rel="stylesheet" href="${ctx }/assets/css/application.css" />
 
 <!-- ACE框架自带 -->
 <script src="${ctx }/assets/js/jquery-2.1.1.js"></script>
@@ -33,3 +33,9 @@
 <script src="${ctx }/assets/js/flot/jquery.flot.resize.min.js"></script>
 <script src="${ctx }/assets/js/ace-elements.min.js"></script>
 <script src="${ctx }/assets/js/ace.min.js"></script>
+
+<!-- 自己添加 -->
+<!-- 表单验证 -->
+<script src="${ctx }/assets/js/jquery.validate.min.js"></script>
+<script src="${ctx }/assets/js/jquery.validate.CN.js"></script>
+<script src="${ctx }/assets/js/application.js"></script>

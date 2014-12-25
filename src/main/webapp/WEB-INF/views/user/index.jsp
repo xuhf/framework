@@ -8,7 +8,7 @@
 <body>
 	<div class="breadcrumbs" id="breadcrumbs">
 		<ul class="breadcrumb">
-			<li><i class="icon-home home-icon"></i> <a href="${ctx}">首页</a></li>
+			<li><i class="icon-home home-icon"></i> <a href="<c:url value="/"/>">首页</a></li>
 			<li class="active">用户管理</li>
 		</ul>
 	</div>
@@ -21,7 +21,12 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<a class="btn btn-primary" href='<c:url value="/user/new"/>'>添加用户</a>
+				<div class="row">
+					<div class="col-xs-12">
+						<a class="btn btn-primary" href='<c:url value="/user/new"/>'>添加用户</a>
+						<a class="btn btn-danger pull-right" href='<c:url value="/user/new"/>'>批量删除用户</a>
+					</div>
+				</div>
 				<div class="hr hr32 hr-dotted"></div>
 				<div class="row">
 					<div class="col-xs-12">
@@ -40,25 +45,24 @@
 										<th>操作</th>
 									</tr>
 								</thead>
-
 								<tbody>
 									<c:forEach items="${page.list }" var="user">
 										<tr>
 											<td class="center"><label> <input
 													type="checkbox" class="ace" /> <span class="lbl"></span>
 											</label></td>
-
-											<td><a href="#">${user.loginName }</a></td>
+											<td><a href="<c:url value='/user/show/${user.id }'/>">${user.loginName }</a></td>
 											<td>${user.name }</td>
 											<td>${user.email }</td>
 											<td>${user.phone }</td>
 											<td>
-												<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-													<a class="btn btn-xs btn-info" href='<c:url value="/user/edit/${user.id }"/>'>
-														<i class="icon-edit bigger-120"></i>
-													</a>
-													<a class="btn btn-xs btn-danger">
-														<i class="icon-trash bigger-120"></i>
+												<div
+													class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+													<a class="btn btn-xs btn-info"
+														href='<c:url value="/user/edit/${user.id }"/>'> <i
+														class="icon-edit bigger-120"></i>
+													</a> <a class="btn btn-xs btn-danger"> <i
+														class="icon-trash bigger-120"></i>
 													</a>
 												</div>
 											</td>
@@ -73,7 +77,7 @@
 			</div>
 		</div>
 	</div>
-	<form:form id="searchForm" action="${ctx}/user" method="post" class="">
+	<form:form id="searchForm" action="${ctx }/user" method="post" class="">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}" />
 		<input id="pageSize" name="pageSize" type="hidden"
 			value="${page.pageSize}" />
