@@ -21,7 +21,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<button class="btn btn-primary">添加用户</button>
+				<a class="btn btn-primary" href='<c:url value="/user/new"/>'>添加用户</a>
 				<div class="hr hr32 hr-dotted"></div>
 				<div class="row">
 					<div class="col-xs-12">
@@ -53,50 +53,13 @@
 											<td>${user.email }</td>
 											<td>${user.phone }</td>
 											<td>
-												<div
-													class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-													<button class="btn btn-xs btn-success">
-														<i class="icon-ok bigger-120"></i>
-													</button>
-
-													<button class="btn btn-xs btn-info">
+												<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+													<a class="btn btn-xs btn-info" href='<c:url value="/user/edit/${user.id }"/>'>
 														<i class="icon-edit bigger-120"></i>
-													</button>
-
-													<button class="btn btn-xs btn-danger">
+													</a>
+													<a class="btn btn-xs btn-danger">
 														<i class="icon-trash bigger-120"></i>
-													</button>
-
-													<button class="btn btn-xs btn-warning">
-														<i class="icon-flag bigger-120"></i>
-													</button>
-												</div>
-
-												<div class="visible-xs visible-sm hidden-md hidden-lg">
-													<div class="inline position-relative">
-														<button class="btn btn-minier btn-primary dropdown-toggle"
-															data-toggle="dropdown">
-															<i class="icon-cog icon-only bigger-110"></i>
-														</button>
-														<ul
-															class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-															<li><a href="#" class="tooltip-info"
-																data-rel="tooltip" title="View"> <span class="blue">
-																		<i class="icon-zoom-in bigger-120"></i>
-																</span>
-															</a></li>
-															<li><a href="#" class="tooltip-success"
-																data-rel="tooltip" title="Edit"> <span class="green">
-																		<i class="icon-edit bigger-120"></i>
-																</span>
-															</a></li>
-															<li><a href="#" class="tooltip-error"
-																data-rel="tooltip" title="Delete"> <span class="red">
-																		<i class="icon-trash bigger-120"></i>
-																</span>
-															</a></li>
-														</ul>
-													</div>
+													</a>
 												</div>
 											</td>
 										</tr>
@@ -118,9 +81,6 @@
 			value="${page.orderBy}" />
 	</form:form>
 	<script type="text/javascript">
-		$(function() {
-			$("li[data-menu='user']").addClass("active");
-		});
 		function page(n, s) {
 			$("#pageNo").val(n);
 			$("#pageSize").val(s);
