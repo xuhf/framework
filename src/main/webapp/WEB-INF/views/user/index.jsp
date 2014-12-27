@@ -65,7 +65,7 @@
 													<a class="btn btn-xs btn-info"
 														href='<c:url value="/user/edit/${user.id }"/>'> <i
 														class="icon-edit bigger-120"></i>
-													</a> <a class="btn btn-xs btn-danger"> <i
+													</a> <a href='<c:url value="/user/delete/${user.id }"/>' data-role='jbox-confirm' data-confirm="您确认删除此用户么？" class="btn btn-xs btn-danger"> <i
 														class="icon-trash bigger-120"></i>
 													</a>
 												</div>

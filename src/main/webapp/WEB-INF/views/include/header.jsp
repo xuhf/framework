@@ -16,6 +16,9 @@
 <link rel="stylesheet" href="${ctx }/assets/css/ace.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-skins.min.css" />
+
+<!-- 自己添加 -->
+<link rel="stylesheet" href="${ctx }/assets/css/jBox.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/application.css" />
 
 <!-- ACE框架自带 -->
@@ -38,4 +41,5 @@
 <!-- 表单验证 -->
 <script src="${ctx }/assets/js/jquery.validate.min.js"></script>
 <script src="${ctx }/assets/js/jquery.validate.CN.js"></script>
+<script src="${ctx }/assets/js/jBox.min.js"></script>
 <script src="${ctx }/assets/js/application.js"></script>

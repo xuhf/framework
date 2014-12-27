@@ -132,9 +132,20 @@
 	font-size: 10.5px;
 }
 
+
+/**
+解决jquery.validate.js的提示信息部分
+**/
 label.error {
 	color: red;
 	margin-left: 5px;
 	font-style: normal;
 	font-weight: bold;
+}
+
+/**
+解决ace中用户信息 没有值的情况下的 行高问题
+**/
+.profile-info-row {
+	min-height: 30px;
 }

@@ -39,7 +39,6 @@
 			// 减少全局变量
 			(function() {
 				var $href = window.location.href;
-				console.log($href);
 				$('#sidebar .nav-list li').removeClass('active').removeClass(
 						'open');
 				$('#sidebar .nav-list li').each(function() {
