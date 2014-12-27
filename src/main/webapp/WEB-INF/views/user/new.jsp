@@ -23,37 +23,84 @@
 			<div class="col-xs-12">
 				<a class="btn btn-primary" href='<c:url value="/user"/>'>返回</a>
 				<div class="hr hr32 hr-dotted"></div>
+				<tags:message message="${message.message}"
+					success="${message.success }" />
 				<div class="row">
 					<div class="col-xs-12">
-						<form data-role="validate" class="form-horizontal" role="form">
+						<form:form id="userForm" data-role='validate'
+							action="${ctx }/user/save" cssClass="form-horizontal" role="form"
+							method="post" modelAttribute="user">
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
 									for="form-field-1"> 用户名 </label>
 								<div class="col-sm-9">
-									<input type="text" name="username" placeholder="Username"
-										class="input-xlarge required" minlength="6" maxlength="20" />
+									<form:input path="loginName" cssClass="input-xlarge required"
+										minlength="6" maxlength="20" value="${user.loginName }"
+										placeholder="请输入用户名" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
-									for="form-field-2"> 密码 </label>
+									for="form-field-1"> 密码 </label>
 								<div class="col-sm-9">
-									<input type="password" name="password" placeholder="Password"
-										class="input-xlarge required" />
+									<form:password path="password" id="password"
+										cssClass="input-xlarge required" minlength="6" maxlength="20"
+										placeholder="请输入密码" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 确认密码 </label>
+								<div class="col-sm-9">
+									<input type="password" name="confirmPassword"
+										placeholder="请再次输入密码" class="input-xlarge required"
+										equalTo="#password" minlength="6" maxlength="20" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 昵称 </label>
+								<div class="col-sm-9">
+									<form:input path="name" placeholder="请输入昵称"
+										cssClass="input-xlarge required" value="${user.name }" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 邮箱 </label>
+								<div class="col-sm-9">
+									<form:input path="email" cssClass="input-xlarge required email"
+										placeholder="请输入邮箱" maxlength="255" value="${user.email }" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 电话 </label>
+								<div class="col-sm-9">
+									<form:input path="mobile" placeholder="请输入手机号码"
+										cssClass="input-xlarge required" value="${user.mobile }" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 固定电话 </label>
+								<div class="col-sm-9">
+									<form:input path="phone" placeholder="请输入固定电话"
+										cssClass="input-xlarge required" value="${user.phone }" />
 								</div>
 							</div>
 							<div class="clearfix form-actions">
 								<div class="col-md-offset-3 col-md-9">
-									<button class="btn btn-info" type="submit">
+									<form:button class="btn btn-info" type="submit">
 										<i class="icon-ok bigger-110"></i> 提交
-									</button>
+									</form:button>
 									&nbsp;&nbsp;&nbsp;&nbsp;
-									<button class="btn" type="reset">
+									<form:button class="btn" type="reset">
 										<i class="icon-undo bigger-110"></i> 重置
-									</button>
+									</form:button>
 								</div>
 							</div>
-						</form>
+						</form:form>
 					</div>
 				</div>
 			</div>

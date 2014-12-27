@@ -26,6 +26,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.collect.Lists;
 import com.isharec.framework.base.persistence.BaseEntity;
 import com.isharec.framework.utils.Collections3;
@@ -59,7 +60,8 @@ public class User extends BaseEntity<User> {
 	private String mobile; // 手机
 
 	private String loginIp; // 最后登陆IP
-
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date loginDate; // 最后登陆日期
 
 	@Type(type = "yes_no")

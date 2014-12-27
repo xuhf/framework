@@ -39,8 +39,8 @@
 		<property name="cookie" ref="rememberMeCookie" />
 	</bean>
 	<!-- rememberMe end -->
-	
-	<!-- 自定义的 FormAuthenticationFilter-->
+
+	<!-- 自定义的 FormAuthenticationFilter -->
 	<bean id="frameworkFormAuthenticationFilter"
 		class="com.isharec.framework.security.FrameworkFormAuthenticationFilter">
 	</bean>
@@ -52,7 +52,7 @@
 		<property name="successUrl" value="/" />
 		<property name="filters">
 			<map>
-				<!-- 自定义的 FormAuthenticationFilter-->
+				<!-- 自定义的 FormAuthenticationFilter -->
 				<entry key="authc" value-ref="frameworkFormAuthenticationFilter" />
 			</map>
 		</property>
@@ -68,6 +68,9 @@
 		</property>
 	</bean>
 
+	<bean id="systemAuthorizingRealm" class="com.isharec.framework.security.SystemAuthorizingRealm">
+	</bean>
+	
 	<!-- 定义 Shiro 主要业务对象 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="systemAuthorizingRealm" />

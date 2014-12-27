@@ -21,7 +21,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.isharec.framework.entity.Menu;
 import com.isharec.framework.entity.User;
@@ -29,7 +28,6 @@ import com.isharec.framework.service.UserService;
 import com.isharec.framework.utils.Encodes;
 import com.isharec.framework.utils.UserUtils;
 
-@Service
 public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 	@Autowired

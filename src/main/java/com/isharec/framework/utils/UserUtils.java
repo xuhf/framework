@@ -22,12 +22,6 @@ import com.isharec.framework.entity.Role;
 import com.isharec.framework.entity.User;
 import com.isharec.framework.security.SystemAuthorizingRealm.Principal;
 
-/**
- * 用户工具类
- * 
- * @author ThinkGem
- * @version 2013-5-29
- */
 public class UserUtils extends BaseService {
 
 	private static UserDao userDao = SpringContextHolder.getBean(UserDao.class);

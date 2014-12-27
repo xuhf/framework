@@ -57,12 +57,12 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	
+
 	<!-- Spring的ContextLoaderListener -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
 	<!-- 静态文件过滤 -->
 	<!-- <filter> <filter-name>StaticFileFilter</filter-name> <filter-class>com.isharec.framework.filter.StaticFileFilter</filter-class> 
 		</filter> <filter-mapping> <filter-name>StaticFileFilter</filter-name> <url-pattern>/*</url-pattern> 

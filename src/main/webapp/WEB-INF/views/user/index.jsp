@@ -8,7 +8,8 @@
 <body>
 	<div class="breadcrumbs" id="breadcrumbs">
 		<ul class="breadcrumb">
-			<li><i class="icon-home home-icon"></i> <a href="<c:url value="/"/>">首页</a></li>
+			<li><i class="icon-home home-icon"></i> <a
+				href="<c:url value="/"/>">首页</a></li>
 			<li class="active">用户管理</li>
 		</ul>
 	</div>
@@ -24,10 +25,13 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<a class="btn btn-primary" href='<c:url value="/user/new"/>'>添加用户</a>
-						<a class="btn btn-danger pull-right" href='<c:url value="/user/new"/>'>批量删除用户</a>
+						<a class="btn btn-danger pull-right"
+							href='<c:url value="/user/new"/>'>批量删除用户</a>
 					</div>
 				</div>
 				<div class="hr hr32 hr-dotted"></div>
+				<tags:message message="${message.message}"
+					success="${message.success }" />
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="table-responsive">
