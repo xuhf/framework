@@ -12,8 +12,8 @@ import com.isharec.framework.entity.Menu;
 public class MenuDao extends BaseDao<Menu> {
 
 	public List<Menu> findByParentIdsLike(String parentIds) {
-		return find("from Menu m where m.parentIds like :p1", new Parameter(
-				parentIds));
+		String hql = "from Menu m where m.parentIds like :p1";
+		return find(hql, new Parameter(parentIds));
 	}
 
 	public List<Menu> findAllList() {
@@ -21,10 +21,8 @@ public class MenuDao extends BaseDao<Menu> {
 	}
 
 	public List<Menu> findByUserId(Long userId) {
-		return find(
-				"select distinct m from Menu m, Role r, User u where m in elements (r.menuList) and r in elements (u.roleList)"
-						+ " and m.delFlag=:p1 and r.delFlag=:p1 and u.id=:p2"
-						+ " order by m.sort", new Parameter(userId));
+		String hql = "select distinct m from Menu m, Role r, User u where m in elements (r.menuList) and r in elements (u.roleList) and u.id=:p1 order by m.sort";
+		return find(hql, new Parameter(userId));
 	}
 
 	public void deleteById(Long id, String parentIds) {

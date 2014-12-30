@@ -33,9 +33,8 @@ public class MenuService extends BaseService {
 		return UserUtils.getMenuList();
 	}
 
-	@Transactional(readOnly = false)
 	public void saveMenu(Menu menu) {
-		menu.setParent(this.getMenu(menu.getParent() == null ? 0 : menu
+		menu.setParent(this.getMenu(menu.getParent() == null ? 0L : menu
 				.getParent().getId()));
 		String oldParentIds = menu.getParentIds(); // 获取修改前的parentIds，用于更新子节点的parentIds
 		menu.setParentIds(menu.getParent().getParentIds()
@@ -54,7 +53,6 @@ public class MenuService extends BaseService {
 		UserUtils.removeCache(UserUtils.CACHE_MENU_LIST);
 	}
 
-	@Transactional(readOnly = false)
 	public void deleteMenu(Long id) {
 		menuDao.deleteById(id, "%," + id + ",%");
 		systemRealm.clearAllCachedAuthorizationInfo();

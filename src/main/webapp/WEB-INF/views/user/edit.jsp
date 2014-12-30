@@ -15,14 +15,14 @@
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				用户管理<small> <i class="icon-double-angle-right"></i> 修改
+				用户管理<small> <i class="icon-double-angle-right"></i> 用户信息修改
 				</small>
 			</h1>
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<a class="btn btn-primary" href='<c:url value="/user"/>'>返回</a>
-				<div class="hr hr32 hr-dotted"></div>
+				<div class="hr hr-dotted"></div>
 				<tags:message message="${message.message}"
 					success="${message.success }" />
 				<div class="row">

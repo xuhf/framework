@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<a class="btn btn-primary" href='<c:url value="/user"/>'>返回</a>
-				<div class="hr hr-dotted"></div>
+				<div class="hr hr32 hr-dotted"></div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="profile-user-info profile-user-info-striped">
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="hr hr-dotted"></div>
+				<div class="hr hr32 hr-dotted"></div>
 				<a class="btn btn-primary pull-right" href='<c:url value="/user/edit/${user.id}"/>'>修改</a>
 			</div>
 		</div>

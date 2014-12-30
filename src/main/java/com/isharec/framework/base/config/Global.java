@@ -2,6 +2,7 @@ package com.isharec.framework.base.config;
 
 import java.util.Map;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
 import com.isharec.framework.utils.PropertiesLoader;
 
@@ -21,4 +22,16 @@ public class Global {
 		return value;
 	}
 
+	/**
+	 * 获得页面大小，默认为20
+	 * 
+	 * @return
+	 */
+	public static Integer getPageSize() {
+		String pageSizeStr = getConfig("page.pageSize");
+		if (Strings.isNullOrEmpty(pageSizeStr)) {
+			return 20;
+		}
+		return Integer.parseInt(pageSizeStr);
+	}
 }

@@ -13,6 +13,13 @@
 <!-- ACE框架自带 -->
 <link rel="stylesheet" href="${ctx }/assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/chosen.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/chosen.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/datepicker.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/bootstrap-timepicker.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/daterangepicker.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/colorpicker.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace-skins.min.css" />
@@ -36,6 +43,7 @@
 <script src="${ctx }/assets/js/flot/jquery.flot.resize.min.js"></script>
 <script src="${ctx }/assets/js/ace-elements.min.js"></script>
 <script src="${ctx }/assets/js/ace.min.js"></script>
+<script src="${ctx }/assets/js/chosen.jquery.min.js"></script>
 
 <!-- 自己添加 -->
 <!-- 表单验证 -->

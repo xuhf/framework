@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.isharec.framework.base.persistence.Page;
 import com.isharec.framework.base.web.BaseService;
 import com.isharec.framework.dao.RoleDao;
 import com.isharec.framework.entity.Role;
@@ -36,6 +37,10 @@ public class RoleService extends BaseService {
 
 	public List<Role> findAllRole() {
 		return UserUtils.getRoleList();
+	}
+
+	public Page<Role> page(Page<Role> page) {
+		return roleDao.find(page);
 	}
 
 	@Transactional(readOnly = false)

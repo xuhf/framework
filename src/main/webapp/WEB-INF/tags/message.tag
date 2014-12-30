@@ -14,7 +14,7 @@
 		</div>
 	</c:if>
 	<c:if test="${success == true }">
-		<div class="alert alert-block alert-success center">
+		<div class="alert alert-block alert-success center" id="messageBox">
 			<button type="button" class="close" data-dismiss="alert">
 				<i class="icon-remove"></i>
 			</button>

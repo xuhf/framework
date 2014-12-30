@@ -10,7 +10,9 @@
 				<li><a href="${ctx}/user"> <i
 						class="icon-double-angle-right"></i> 用户管理
 				</a></li>
-
+				<li><a href="${ctx}/menu"> <i
+						class="icon-double-angle-right"></i> 菜单管理
+				</a></li>
 				<li><a href="${ctx}/role"> <i
 						class="icon-double-angle-right"></i> 角色管理
 				</a></li>
@@ -22,8 +24,7 @@
 				<li><a href="jquery-ui.html"> <i
 						class="icon-double-angle-right"></i> 字典管理
 				</a></li>
-			</ul>
-		</li>
+			</ul></li>
 	</ul>
 	<div class="sidebar-collapse" id="sidebar-collapse">
 		<i class="icon-double-angle-left" data-icon1="icon-double-angle-left"
@@ -41,14 +42,16 @@
 				var $href = window.location.href;
 				$('#sidebar .nav-list li').removeClass('active').removeClass(
 						'open');
-				$('#sidebar .nav-list li').each(function() {
-					var $this = $(this);
-					var $a = $this.find('a');
-					if ($href.indexOf($a.attr("href")) >= 0) {
-						$this.addClass('active');
-						$this.closest('ul').closest('li').addClass('active open');
-					}
-				});
+				$('#sidebar .nav-list li').each(
+						function() {
+							var $this = $(this);
+							var $a = $this.find('a');
+							if ($href.indexOf($a.attr("href")) >= 0) {
+								$this.addClass('active');
+								$this.closest('ul').closest('li').addClass(
+										'active open');
+							}
+						});
 			}());
 		});
 	</script>

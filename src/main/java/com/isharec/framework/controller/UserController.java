@@ -93,7 +93,7 @@ public class UserController extends BaseController {
 		u.setPhone(user.getPhone());
 		u.setMobile(user.getMobile());
 		userService.saveUser(u);
-		addSuccessMessage(redirectAttributes, "更新用户 " + u.getLoginName()
+		addSuccessMessage(redirectAttributes, "修改用户 " + u.getLoginName()
 				+ " 成功");
 		return model;
 	}
@@ -108,7 +108,7 @@ public class UserController extends BaseController {
 			return model;
 		}
 		userService.deleteUser(id);
-		addSuccessMessage(redirectAttributes, "修改用户 " + u.getLoginName()
+		addSuccessMessage(redirectAttributes, "删除用户 " + u.getLoginName()
 				+ " 成功");
 		return model;
 	}

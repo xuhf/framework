@@ -16,7 +16,7 @@
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				用户管理<small> <i class="icon-double-angle-right"></i> 用户列表
+				用户管理<small> <i class="icon-double-angle-right"></i> 查看
 				</small>
 			</h1>
 		</div>
@@ -29,7 +29,7 @@
 							href='<c:url value="/user/new"/>'>批量删除用户</a>
 					</div>
 				</div>
-				<div class="hr hr-dotted"></div>
+				<div class="hr hr32 hr-dotted"></div>
 				<tags:message message="${message.message}"
 					success="${message.success }" />
 				<div class="row">
