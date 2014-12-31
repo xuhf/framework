@@ -94,17 +94,17 @@ ul.ztree {
 					success="${message.success }" />
 				<div class="row">
 					<div class="col-xs-12">
-						<form:form id="roleForm" action="${ctx }/role/save"
+						<form:form id="roleForm" action="${ctx }/role/update"
 							cssClass="form-horizontal" role="form" method="post"
 							modelAttribute="role">
-							<form:hidden path="id" value="${role.id }"/>
+							<form:hidden path="id" value="${role.id }" />
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
 									for="form-field-1"> 角色名称 </label>
 								<div class="col-sm-9">
 									<form:input path="name" cssClass="input-xlarge required"
 										minlength="2" maxlength="20" value="${role.name }"
-										placeholder="请输入角色名称" disabled="true"/>
+										placeholder="请输入角色名称" disabled="true" />
 								</div>
 							</div>
 							<div class="form-group">

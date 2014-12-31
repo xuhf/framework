@@ -89,6 +89,16 @@
 										cssClass="input-xlarge required" value="${user.phone }" />
 								</div>
 							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 用户角色 </label>
+								<div class="col-sm-9">
+									<form:select path="roleIdList"
+										cssClass="input-xlarge chosen-select" multiple="false">
+										<form:options items="${allRoles}" itemLabel="name" itemValue="id"/>
+									</form:select>
+								</div>
+							</div>
 							<div class="clearfix form-actions">
 								<div class="col-md-offset-3 col-md-9">
 									<form:button class="btn btn-info" type="submit">

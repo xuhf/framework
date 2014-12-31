@@ -1,6 +1,5 @@
 package com.isharec.framework.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +46,6 @@ public class MenuController extends BaseController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ModelAndView save(Menu menu, RedirectAttributes redirectAttributes) {
 		ModelAndView model = new ModelAndView("redirect:/menu");
-		menu.setCreateAt(new Date());
 		if (menu.getParent() == null || menu.getParent().getId() == 0) {
 			menu.setParent(new Menu(0L));
 		}
@@ -83,7 +81,6 @@ public class MenuController extends BaseController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public ModelAndView update(Menu menu, RedirectAttributes redirectAttributes) {
 		ModelAndView model = new ModelAndView("redirect:/menu");
-		menu.setUpdateAt(new Date());
 		if (menu.getParent() == null || menu.getParent().getId() == 0) {
 			menu.setParent(new Menu(0L));
 		}

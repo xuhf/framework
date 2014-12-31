@@ -92,8 +92,9 @@ public class RoleController extends BaseController {
 			addMessage(redirectAttributes, "修改角色失败，角色不存在。");
 			return model;
 		}
-		roleService.saveRole(role);
-		addSuccessMessage(redirectAttributes, "修改角色 " + role.getName() + " 成功。");
+		tmpRole.setMenuList(role.getMenuList());
+		roleService.saveRole(tmpRole);
+		addSuccessMessage(redirectAttributes, "修改角色 " + tmpRole.getName() + " 成功。");
 		return model;
 	}
 

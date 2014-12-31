@@ -56,11 +56,22 @@
 									<span class="">${user.phone}</span>
 								</div>
 							</div>
+							<div class="profile-info-row">
+								<div class="profile-info-name">用户角色</div>
+								<div class="profile-info-value">
+									<span class=""> <c:forEach items="${user.roleList }"
+											var="role">
+											${role.name }&nbsp;
+										</c:forEach>
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="hr hr-dotted"></div>
-				<a class="btn btn-primary pull-right" href='<c:url value="/user/edit/${user.id}"/>'>修改</a>
+				<a class="btn btn-primary pull-right"
+					href='<c:url value="/user/edit/${user.id}"/>'>修改</a>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,7 @@
 package com.isharec.framework.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,7 +16,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.google.common.base.Strings;
 import com.isharec.framework.base.persistence.Page;
 import com.isharec.framework.base.web.BaseController;
+import com.isharec.framework.entity.Role;
 import com.isharec.framework.entity.User;
+import com.isharec.framework.service.RoleService;
 import com.isharec.framework.service.UserService;
 
 @Controller
@@ -23,6 +27,9 @@ public class UserController extends BaseController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private RoleService roleService;
 
 	@RequestMapping()
 	public ModelAndView index(HttpServletRequest request,
@@ -38,6 +45,8 @@ public class UserController extends BaseController {
 		ModelAndView model = new ModelAndView("/user/new");
 		User user = new User();
 		model.addObject("user", user);
+		List<Role> allRoles = roleService.findAllRole();
+		model.addObject("allRoles", allRoles);
 		return model;
 	}
 
@@ -74,6 +83,8 @@ public class UserController extends BaseController {
 		ModelAndView model = new ModelAndView("/user/edit");
 		User user = userService.getUser(id);
 		model.addObject("user", user);
+		List<Role> allRoles = roleService.findAllRole();
+		model.addObject("allRoles", allRoles);
 		return model;
 	}
 
@@ -92,6 +103,7 @@ public class UserController extends BaseController {
 		u.setEmail(user.getEmail());
 		u.setPhone(user.getPhone());
 		u.setMobile(user.getMobile());
+		u.setRoleList(user.getRoleList());
 		userService.saveUser(u);
 		addSuccessMessage(redirectAttributes, "修改用户 " + u.getLoginName()
 				+ " 成功");

@@ -46,7 +46,7 @@
 									<form:password path="password" id="password"
 										cssClass="input-xlarge" minlength="6" maxlength="20"
 										placeholder="请输入密码" />
-									<label style="color:#657ba0;margin-left: 5px;">若不修改请留空</label>
+									<label style="color: #657ba0; margin-left: 5px;">若不修改请留空</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -88,6 +88,17 @@
 								<div class="col-sm-9">
 									<form:input path="phone" placeholder="请输入固定电话"
 										cssClass="input-xlarge required" value="${user.phone }" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 用户角色 </label>
+								<div class="col-sm-9">
+									<form:select path="roleIdList"
+										cssClass="input-xlarge chosen-select" multiple="false">
+										<form:options items="${allRoles}" itemLabel="name"
+											itemValue="id" />
+									</form:select>
 								</div>
 							</div>
 							<div class="clearfix form-actions">

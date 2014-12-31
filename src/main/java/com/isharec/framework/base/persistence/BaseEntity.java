@@ -57,7 +57,9 @@ public abstract class BaseEntity<T> implements Serializable {
 
 	@PrePersist
 	public void beforeInsert() {
-		createAt = updateAt = new Date();
+		if (this.createAt == null) {
+			this.createAt = new Date();
+		}
 	}
 
 	@PreUpdate
