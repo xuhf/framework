@@ -14,10 +14,12 @@
 <link rel="stylesheet" href="${ctx }/assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/chosen.css" />
-<link rel="stylesheet" href="${ctx }/assets/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet"
+	href="${ctx }/assets/css/jquery-ui-1.10.3.custom.min.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/chosen.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/datepicker.css" />
-<link rel="stylesheet" href="${ctx }/assets/css/bootstrap-timepicker.css" />
+<link rel="stylesheet"
+	href="${ctx }/assets/css/bootstrap-timepicker.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/daterangepicker.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/colorpicker.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/ace.min.css" />
@@ -27,27 +29,45 @@
 <!-- 自己添加 -->
 <link rel="stylesheet" href="${ctx }/assets/css/jBox.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/application.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/zTreeStyle/zTreeStyle.css" />
 
 <!-- ACE框架自带 -->
-<script src="${ctx }/assets/js/jquery-2.1.1.js"></script>
-<script src="${ctx }/assets/js/ace-extra.min.js"></script>
-<script src="${ctx }/assets/js/bootstrap.min.js"></script>
-<script src="${ctx }/assets/js/typeahead-bs2.min.js"></script>
-<script src="${ctx }/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="${ctx }/assets/js/jquery.ui.touch-punch.min.js"></script>
-<script src="${ctx }/assets/js/jquery.slimscroll.min.js"></script>
-<script src="${ctx }/assets/js/jquery.easy-pie-chart.min.js"></script>
-<script src="${ctx }/assets/js/jquery.sparkline.min.js"></script>
-<script src="${ctx }/assets/js/flot/jquery.flot.min.js"></script>
-<script src="${ctx }/assets/js/flot/jquery.flot.pie.min.js"></script>
-<script src="${ctx }/assets/js/flot/jquery.flot.resize.min.js"></script>
-<script src="${ctx }/assets/js/ace-elements.min.js"></script>
-<script src="${ctx }/assets/js/ace.min.js"></script>
-<script src="${ctx }/assets/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/ace-extra.min.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/typeahead-bs2.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.slimscroll.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.easy-pie-chart.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.sparkline.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/flot/jquery.flot.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/flot/jquery.flot.resize.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/ace-elements.min.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/ace.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/chosen.jquery.min.js"></script>
 
 <!-- 自己添加 -->
 <!-- 表单验证 -->
-<script src="${ctx }/assets/js/jquery.validate.min.js"></script>
-<script src="${ctx }/assets/js/jquery.validate.CN.js"></script>
-<script src="${ctx }/assets/js/jBox.min.js"></script>
-<script src="${ctx }/assets/js/application.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.validate.CN.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/jBox.min.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript" src="${ctx }/assets/js/application.js"></script>

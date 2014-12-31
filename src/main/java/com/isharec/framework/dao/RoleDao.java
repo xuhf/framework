@@ -10,6 +10,6 @@ import com.isharec.framework.entity.Role;
 public class RoleDao extends BaseDao<Role> {
 
 	public Role findByName(String name) {
-		return getByHql("from Role where and name = :p2", new Parameter(name));
+		return getByHql("from Role where name = :p1", new Parameter(name));
 	}
 }

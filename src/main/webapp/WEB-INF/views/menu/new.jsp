@@ -38,7 +38,7 @@
 										cssClass="input-xlarge chosen-select">
 										<form:option value="0">一级菜单</form:option>
 										<c:forEach items="${menuList}" var="obj">
-											<c:if test="${obj.isShow eq '1' && menu.parent.id==obj.id}">
+											<c:if test="${obj.isShow eq '1' && menu.parent.id == obj.id}">
 												<form:option value="${obj.id}" selected="selected">${obj.name}</form:option>
 											</c:if>
 											<c:if test="${obj.isShow eq '1'}">

@@ -105,4 +105,22 @@ public class MenuController extends BaseController {
 		addSuccessMessage(redirectAttributes, "删除菜单 " + menu.getName() + " 成功");
 		return model;
 	}
+
+	@RequestMapping(value = "/parent/{parentId}", method = RequestMethod.GET)
+	public ModelAndView parent(@PathVariable Long parentId,
+			RedirectAttributes redirectAttributes) {
+		ModelAndView model = new ModelAndView("/menu/new");
+		Menu menu = new Menu();
+		Menu parentMenu = menuService.getMenu(parentId);
+		if (parentMenu == null) {
+			model.setViewName("redirect:/menu");
+			addMessage(redirectAttributes, "增加下级菜单失败，菜单不存在。");
+			return model;
+		}
+		menu.setParent(parentMenu);
+		List<Menu> menuList = UserUtils.getMenuList();
+		model.addObject("menuList", menuList);
+		model.addObject("menu", menu);
+		return model;
+	}
 }

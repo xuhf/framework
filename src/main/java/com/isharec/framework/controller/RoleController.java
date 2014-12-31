@@ -78,6 +78,8 @@ public class RoleController extends BaseController {
 	public ModelAndView edit(@PathVariable Long id) {
 		ModelAndView model = new ModelAndView("/role/edit");
 		Role role = roleService.getRole(id);
+		List<Menu> menuList = menuService.findAllMenu();
+		model.addObject("menuList", menuList);
 		model.addObject("role", role);
 		return model;
 	}
