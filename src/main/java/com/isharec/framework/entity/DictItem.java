@@ -3,7 +3,6 @@ package com.isharec.framework.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
@@ -21,7 +20,7 @@ import org.hibernate.validator.constraints.Length;
 import com.isharec.framework.base.persistence.BaseEntity;
 
 @Entity
-@Table(name = "f_dict_header")
+@Table(name = "f_dict_item")
 @DynamicInsert
 @DynamicUpdate
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -38,10 +37,8 @@ public class DictItem extends BaseEntity<DictItem> {
 	private String value;
 
 	@ManyToOne()
-	@Fetch(FetchMode.SUBSELECT)
-	@Cascade(value = { CascadeType.ALL })
+	@Fetch(FetchMode.SELECT)
 	@NotFound(action = NotFoundAction.IGNORE)
-	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private DictHeader dictHeader;
 
 	public String getName() {

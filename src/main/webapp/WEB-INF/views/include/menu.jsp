@@ -21,7 +21,7 @@
 						class="icon-double-angle-right"></i> 部门管理
 				</a></li>
 
-				<li><a href="jquery-ui.html"> <i
+				<li><a href="${ctx}/dict"> <i
 						class="icon-double-angle-right"></i> 字典管理
 				</a></li>
 			</ul></li>

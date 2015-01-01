@@ -45,7 +45,6 @@ public class DictHeader extends BaseEntity<DictHeader> {
 	@Cascade(value = { CascadeType.ALL })
 	@Fetch(FetchMode.SUBSELECT)
 	@NotFound(action = NotFoundAction.IGNORE)
-	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private List<DictItem> items = Lists.newArrayList();
 
 	public String getName() {
