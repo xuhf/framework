@@ -20,10 +20,10 @@
 				</a>
 					<ul
 						class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-						<li><a href="#"> <i class="icon-cog"></i> 设置
+						<li><a href="javascript:alert('未完成，待续')"> <i class="icon-cog"></i> 修改密码
 						</a></li>
-						<li><a href="#"> <i class="icon-user"></i> 个人资料
-						</a></li>
+						<!-- <li><a href="#"> <i class="icon-user"></i> 个人资料
+						</a></li> -->
 						<li class="divider"></li>
 						<li><a href="${ctx }/logout"> <i class="icon-off"></i> 退出
 						</a></li>

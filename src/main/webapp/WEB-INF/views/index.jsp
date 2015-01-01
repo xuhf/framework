@@ -15,7 +15,7 @@
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				首页<small> <i class="icon-double-angle-right"></i> 
+				首页<small> <i class="icon-double-angle-right"></i>
 				</small>
 			</h1>
 		</div>
@@ -26,8 +26,8 @@
 						<i class="icon-remove"></i>
 					</button>
 					<i class="icon-ok green"></i> 欢迎使用 <strong class="green">
-						Ace后台管理系统 <small>(v1.2)</small>
-					</strong> ,轻量级好用的后台管理系统模版.
+						BaseFramework后台管理系统 <small>(v1.0.0)</small>
+					</strong> ,简单的后台管理系统模版。
 				</div>
 			</div>
 		</div>
