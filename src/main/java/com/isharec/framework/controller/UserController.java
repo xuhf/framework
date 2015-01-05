@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -20,6 +21,7 @@ import com.isharec.framework.entity.Role;
 import com.isharec.framework.entity.User;
 import com.isharec.framework.service.RoleService;
 import com.isharec.framework.service.UserService;
+import com.isharec.framework.utils.UserUtils;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -122,6 +124,28 @@ public class UserController extends BaseController {
 		userService.deleteUser(id);
 		addSuccessMessage(redirectAttributes, "删除用户 " + u.getLoginName()
 				+ " 成功");
+		return model;
+	}
+
+	@RequestMapping(value = "changePwd", method = RequestMethod.GET)
+	public ModelAndView changePwd() {
+		ModelAndView model = new ModelAndView("/user/changePwd");
+		return model;
+	}
+
+	@RequestMapping(value = "changePwd", method = RequestMethod.POST)
+	public ModelAndView updatePwd(
+			@RequestParam(required = true) String password,
+			@RequestParam(required = true) String newPassword) {
+		ModelAndView model = new ModelAndView("/user/changePwd");
+		User user = UserUtils.getUser();
+		if (!UserService.validatePassword(password, user.getPassword())) {
+			addMessage(model, "修改密码失败，旧密码错误。");
+			return model;
+		}
+		userService.updatePasswordById(user.getId(), user.getLoginName(),
+				newPassword);
+		addSuccessMessage(model, "修改密码成功。");
 		return model;
 	}
 }

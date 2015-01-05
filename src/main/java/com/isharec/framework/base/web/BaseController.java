@@ -40,6 +40,13 @@ public abstract class BaseController {
 		model.addObject("message", messageMap);
 	}
 
+	public void addSuccessMessage(ModelAndView model, String message) {
+		Map<String, Object> messageMap = Maps.newHashMap();
+		messageMap.put("success", true);
+		messageMap.put("message", message);
+		model.addObject("message", messageMap);
+	}
+
 	/**
 	 * 失败消息
 	 * 

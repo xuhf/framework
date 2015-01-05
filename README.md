@@ -9,7 +9,7 @@
 欢迎访问 [http://www.isharec.com](http://www.isharec.com)
 
 ## 主要功能
-* 系统
+* 系统主要模块
 	* 用户管理
 	* 菜单管理
 	* 角色管理 （目前是基于菜单的权限管理）
