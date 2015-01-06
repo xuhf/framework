@@ -77,7 +77,8 @@
 			</div>
 		</div>
 	</div>
-	<form:form id="searchForm" action="${ctx }/parameter" method="post" class="">
+	<form:form id="searchForm" action="${ctx }/parameter" method="post"
+		class="">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}" />
 		<input id="pageSize" name="pageSize" type="hidden"
 			value="${page.pageSize}" />
