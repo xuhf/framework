@@ -64,7 +64,7 @@
 														<i class="icon-edit bigger-120"></i>
 													</a> <a
 														href='<c:url value="/department/delete/${department.id }"/>'
-														data-role='jbox-confirm' data-confirm="要删除该部门及所有子部门吗？"
+														data-role='jbox-confirm' data-confirm="您确认删除该部门吗？"
 														class="btn btn-xs btn-danger"> <i
 														class="icon-trash bigger-120"></i>
 													</a>
