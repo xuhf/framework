@@ -15,7 +15,7 @@
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				用户管理<small> <i class="icon-double-angle-right"></i> 用户信息修改
+				用户管理<small> <i class="icon-double-angle-right"></i> 修改
 				</small>
 			</h1>
 		</div>

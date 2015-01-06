@@ -15,7 +15,7 @@
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				数据字典管理<small> <i class="icon-double-angle-right"></i> 数据字典添加
+				数据字典管理<small> <i class="icon-double-angle-right"></i> 添加
 				</small>
 			</h1>
 		</div>
