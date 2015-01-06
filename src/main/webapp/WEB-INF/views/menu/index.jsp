@@ -4,6 +4,11 @@
 <html lang="en" style="overflow: hidden;">
 <head>
 <meta charset="utf-8">
+<script type="text/javascript">
+	$(function(){
+		$("#treeTable").treeTable({expandLevel : 3});
+	});
+</script>
 </head>
 <body>
 	<div class="breadcrumbs" id="breadcrumbs">
@@ -34,7 +39,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="table-responsive">
-								<table id="sample-table-1"
+								<table id="treeTable"
 									class="table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
@@ -50,16 +55,16 @@
 										<c:forEach items="${list}" var="menu">
 											<tr id="${menu.id}"
 												pId="${menu.parent.id ne '1' ? menu.parent.id : '0'}">
-												<td style="padding-left:${menu.paddingNum*20}px;"><i
+												<td><i
 													class="icon-${not empty menu.icon?menu.icon:' hide'}"></i>
 													<a href="<c:url value="/menu/edit/${menu.id }"/>">${menu.name}</a></td>
 												<td>${menu.href}</td>
-												<td style="text-align: center;"><input
-													type="hidden" name="ids" value="${menu.id}" /> <input
-													name="sorts" type="text" value="${menu.sort}"
+												<td style="text-align: center;"><input type="hidden"
+													name="ids" value="${menu.id}" /> <input name="sorts"
+													type="text" value="${menu.sort}"
 													onkeyup="this.value=this.value.replace(/[^\d]/g,'')"
-													onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" style="text-align: center;" />
-												</td>
+													onafterpaste="this.value=this.value.replace(/[^\d]/g,'')"
+													style="text-align: center;" /></td>
 												<td>${menu.isShow eq '1'?'显示':'隐藏'}</td>
 												<td>${menu.permission}</td>
 												<td>

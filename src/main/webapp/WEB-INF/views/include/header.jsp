@@ -29,7 +29,9 @@
 <!-- 自己添加 -->
 <link rel="stylesheet" href="${ctx }/assets/css/jBox.css" />
 <link rel="stylesheet" href="${ctx }/assets/css/application.css" />
-<link rel="stylesheet" href="${ctx }/assets/css/zTreeStyle/zTreeStyle.css" />
+<link rel="stylesheet"
+	href="${ctx }/assets/css/zTreeStyle/zTreeStyle.css" />
+<link rel="stylesheet" href="${ctx }/assets/css/treeTable/treeTable.min.css" />
 
 <!-- ACE框架自带 -->
 <script type="text/javascript" src="${ctx }/assets/js/jquery-2.1.1.js"></script>
@@ -70,4 +72,6 @@
 	src="${ctx }/assets/js/jquery.ztree.core-3.5.js"></script>
 <script type="text/javascript"
 	src="${ctx }/assets/js/jquery.ztree.excheck-3.5.js"></script>
+<script type="text/javascript"
+	src="${ctx }/assets/js/jquery.treeTable.js"></script>
 <script type="text/javascript" src="${ctx }/assets/js/application.js"></script>

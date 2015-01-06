@@ -10,11 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 import org.hibernate.validator.constraints.Length;
 
 import com.google.common.collect.Lists;
@@ -31,7 +34,11 @@ public class Department extends BaseEntity<Department> {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "parent_id")
+	@NotFound(action = NotFoundAction.IGNORE)
 	private Department parent;
+
+	@Length(min = 1, max = 255)
+	private String parentIds;
 
 	@Column
 	@Length(min = 1, max = 200)
@@ -44,6 +51,16 @@ public class Department extends BaseEntity<Department> {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "parent")
 	private List<Department> subDepartments = Lists.newArrayList();
 
+	public Department() {
+		super();
+	}
+
+	public Department(Long id) {
+		this();
+		this.id = id;
+		this.parentIds = "";
+	}
+
 	public Department getParent() {
 		return parent;
 	}
@@ -51,7 +68,15 @@ public class Department extends BaseEntity<Department> {
 	public void setParent(Department parent) {
 		this.parent = parent;
 	}
-
+	
+	public String getParentIds() {
+		return parentIds;
+	}
+	
+	public void setParentIds(String parentIds) {
+		this.parentIds = parentIds;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -74,5 +99,34 @@ public class Department extends BaseEntity<Department> {
 
 	public void setSubDepartments(List<Department> subDepartments) {
 		this.subDepartments = subDepartments;
+	}
+
+	@Transient
+	public static void sortList(List<Department> list,
+			List<Department> sourcelist) {
+		for (Department first : sourcelist) {
+			// 一级菜单父节点为0
+			if (first.getParent() == null || first.getParent().getId() == 0) {
+				list.add(first);
+				// 二级菜单
+				for (Department second : sourcelist) {
+					// 判断是否还有子节点, 有则继续获取子节点
+					if (second.getParent() != null
+							&& second.getParent().getId() > 0
+							&& second.getParent().getId() == first.getId()) {
+						list.add(second);
+						// 三级菜单
+						for (Department three : sourcelist) {
+							if (three.getParent() != null
+									&& three.getParent().getId() > 0
+									&& three.getParent().getId() == second
+											.getId()) {
+								list.add(three);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
