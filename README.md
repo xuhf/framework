@@ -33,3 +33,4 @@
 * jquery.validate 表单验证插件
 * jquery.ztree 树插件
 * jBox 消息提示插件
+* jquery.treeTable 让表格已树的接口显示
