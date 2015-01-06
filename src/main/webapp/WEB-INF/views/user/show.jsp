@@ -57,6 +57,24 @@
 								</div>
 							</div>
 							<div class="profile-info-row">
+								<div class="profile-info-name">部门</div>
+								<div class="profile-info-value">
+									<span class="">${user.department.name}</span>
+								</div>
+							</div>
+							<div class="profile-info-row">
+								<div class="profile-info-name">最后登录时间</div>
+								<div class="profile-info-value">
+									<span class="">${user.loginDate}</span>
+								</div>
+							</div>
+							<div class="profile-info-row">
+								<div class="profile-info-name">最后登录IP</div>
+								<div class="profile-info-value">
+									<span class="">${user.loginIp}</span>
+								</div>
+							</div>
+							<div class="profile-info-row">
 								<div class="profile-info-name">用户角色</div>
 								<div class="profile-info-value">
 									<span class=""> <c:forEach items="${user.roleList }"

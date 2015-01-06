@@ -91,11 +91,23 @@
 							</div>
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right"
+									for="form-field-1"> 部门 </label>
+								<div class="col-sm-9">
+									<form:select path="department.id"
+										cssClass="input-xlarge chosen-select" multiple="false">
+										<form:options items="${departments}" itemLabel="name"
+											itemValue="id" />
+									</form:select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label no-padding-right"
 									for="form-field-1"> 用户角色 </label>
 								<div class="col-sm-9">
 									<form:select path="roleIdList"
 										cssClass="input-xlarge chosen-select" multiple="false">
-										<form:options items="${allRoles}" itemLabel="name" itemValue="id"/>
+										<form:options items="${allRoles}" itemLabel="name"
+											itemValue="id" />
 									</form:select>
 								</div>
 							</div>

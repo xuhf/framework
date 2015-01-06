@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -60,7 +61,7 @@ public class User extends BaseEntity<User> {
 	private String mobile; // 手机
 
 	private String loginIp; // 最后登陆IP
-	
+
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date loginDate; // 最后登陆日期
 
@@ -75,6 +76,11 @@ public class User extends BaseEntity<User> {
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	@JsonIgnore
 	private List<Role> roleList = Lists.newArrayList(); // 拥有角色列表
+
+	@ManyToOne
+	@JoinColumn(name = "department_id")
+	@NotFound(action = NotFoundAction.IGNORE)
+	private Department department;
 
 	@Transient
 	@JsonIgnore
@@ -192,5 +198,13 @@ public class User extends BaseEntity<User> {
 
 	public void setRoleList(List<Role> roleList) {
 		this.roleList = roleList;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 }

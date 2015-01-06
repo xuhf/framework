@@ -25,8 +25,6 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<a class="btn btn-primary" href='<c:url value="/user/new"/>'>添加用户</a>
-						<a class="btn btn-danger pull-right"
-							href='<c:url value="/user/new"/>'>批量删除用户</a>
 					</div>
 				</div>
 				<div class="hr hr-dotted"></div>
@@ -39,13 +37,13 @@
 								class="table table-striped table-bordered table-hover">
 								<thead>
 									<tr>
-										<th class="center"><label> <input type="checkbox"
-												class="ace" /> <span class="lbl"></span>
-										</label></th>
 										<th>用户名</th>
 										<th>昵称</th>
 										<th>Email</th>
 										<th>电话</th>
+										<th>部门</th>
+										<th>最后登录时间</th>
+										<th>最后登录IP</th>
 										<th>用户角色</th>
 										<th>操作</th>
 									</tr>
@@ -53,13 +51,13 @@
 								<tbody>
 									<c:forEach items="${page.list }" var="user">
 										<tr>
-											<td class="center"><label> <input
-													type="checkbox" class="ace" /> <span class="lbl"></span>
-											</label></td>
 											<td><a href="<c:url value='/user/show/${user.id }'/>">${user.loginName }</a></td>
 											<td>${user.name }</td>
 											<td>${user.email }</td>
 											<td>${user.phone }</td>
+											<td>${user.department.name }</td>
+											<td>${user.loginDate }</td>
+											<td>${user.loginIp }</td>
 											<td>
 												<c:forEach items="${user.roleList }" var="role">
 												${role.name }&nbsp;
