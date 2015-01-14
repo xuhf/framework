@@ -72,7 +72,7 @@
 														class="visible-md visible-lg hidden-sm hidden-xs btn-group">
 														<a class="btn btn-xs btn-info"
 															href='<c:url value="/menu/parent/${menu.id }"/>'> <i
-															class="icon-save bigger-120"></i>
+															class="icon-plus bigger-120"></i>
 														</a> <a class="btn btn-xs btn-info"
 															href='<c:url value="/menu/edit/${menu.id }"/>'> <i
 															class="icon-edit bigger-120"></i>
